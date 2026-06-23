@@ -36,7 +36,7 @@ Create project foundation.
 
 ---
 
-### Task 0.1
+### [x] Task 0.1
 
 Initialize Expo project.
 
@@ -52,7 +52,7 @@ Acceptance Criteria:
 
 ---
 
-### Task 0.2
+### [x] Task 0.2
 
 Install dependencies.
 
@@ -86,7 +86,7 @@ Acceptance Criteria:
 
 ---
 
-### Task 0.3
+### [x] Task 0.3
 
 Create folder structure.
 
@@ -113,7 +113,7 @@ Exists and organized.
 
 ---
 
-### Task 0.4
+### [x] Task 0.4
 
 Configure ESLint and Prettier.
 
