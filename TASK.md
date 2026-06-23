@@ -177,7 +177,7 @@ Create local storage layer.
 
 ---
 
-### Task 2.1
+### [x] Task 2.1
 
 Initialize SQLite database.
 
@@ -187,7 +187,7 @@ Database created on startup.
 
 ---
 
-### Task 2.2
+### [x] Task 2.2
 
 Create migrations.
 
@@ -206,7 +206,7 @@ Tables automatically created.
 
 ---
 
-### Task 2.3
+### [x] Task 2.3
 
 Create repository layer.
 
@@ -233,7 +233,7 @@ Users can manage vehicles.
 
 ---
 
-### Task 3.1
+### [x] Task 3.1
 
 Create Vehicle model.
 
@@ -243,7 +243,7 @@ Types defined.
 
 ---
 
-### Task 3.2
+### [x] Task 3.2
 
 Build Add Vehicle Screen.
 
@@ -263,7 +263,7 @@ Vehicle saved successfully.
 
 ---
 
-### Task 3.3
+### [x] Task 3.3
 
 Build Vehicle List Screen.
 
@@ -275,7 +275,7 @@ Acceptance Criteria:
 
 ---
 
-### Task 3.4
+### [x] Task 3.4
 
 Build Edit Vehicle Screen.
 
@@ -285,7 +285,7 @@ Vehicle updates correctly.
 
 ---
 
-### Task 3.5
+### [x] Task 3.5
 
 Build Delete Vehicle flow.
 

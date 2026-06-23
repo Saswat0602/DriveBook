@@ -1,15 +1,37 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import { useColorScheme } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Stack } from 'expo-router';
+import { initDatabase } from '../database';
+import { LoadingState, Screen } from '../components/ui';
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
+export default function RootLayout() {
+  const [dbInitialized, setDbInitialized] = useState(false);
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  useEffect(() => {
+    const setup = async () => {
+      try {
+        await initDatabase();
+        setDbInitialized(true);
+      } catch (e) {
+        console.error("Database init error:", e);
+      }
+    };
+    setup();
+  }, []);
+
+  if (!dbInitialized) {
+    return (
+      <Screen>
+        <LoadingState message="Initializing Database..." />
+      </Screen>
+    );
+  }
+
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" />
+      <Stack.Screen name="vehicles/index" />
+      <Stack.Screen name="vehicles/add" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="vehicles/edit" options={{ presentation: 'modal' }} />
+    </Stack>
   );
 }
