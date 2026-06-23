@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, SafeAreaView, ViewProps, StatusBar } from 'react-native';
+import { View, StyleSheet, ViewProps, StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../../hooks/useTheme';
 
 interface ScreenProps extends ViewProps {
