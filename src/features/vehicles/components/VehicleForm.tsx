@@ -11,7 +11,7 @@ const vehicleSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   registrationNumber: z.string().min(1, 'Registration Number is required'),
   vehicleType: z.enum(['Bike', 'Car', 'Scooter', 'Other'], {
-    invalid_type_error: 'Must be Bike, Car, Scooter, or Other'
+    message: 'Must be Bike, Car, Scooter, or Other'
   }),
   brand: z.string().min(1, 'Brand is required'),
   model: z.string().min(1, 'Model is required'),

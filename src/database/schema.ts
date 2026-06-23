@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS fuel_logs (
   fuelAmountLitres REAL NOT NULL,
   totalCost REAL NOT NULL,
   fuelType TEXT NOT NULL,
+  attachmentUri TEXT,
   notes TEXT,
   FOREIGN KEY (vehicleId) REFERENCES vehicles (id) ON DELETE CASCADE
 );
@@ -32,6 +33,7 @@ CREATE TABLE IF NOT EXISTS service_records (
   odometer INTEGER NOT NULL,
   serviceType TEXT NOT NULL,
   cost REAL NOT NULL,
+  attachmentUri TEXT,
   notes TEXT,
   FOREIGN KEY (vehicleId) REFERENCES vehicles (id) ON DELETE CASCADE
 );

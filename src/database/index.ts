@@ -11,6 +11,19 @@ export const initDatabase = async (): Promise<SQLite.SQLiteDatabase> => {
   dbInstance = await SQLite.openDatabaseAsync(DB_NAME);
   await dbInstance.execAsync(SCHEMA_QUERIES);
   
+  // Safe migration for existing dev tables
+  try {
+    await dbInstance.execAsync('ALTER TABLE fuel_logs ADD COLUMN attachmentUri TEXT;');
+  } catch (e) {
+    // Column already exists, ignore
+  }
+  
+  try {
+    await dbInstance.execAsync('ALTER TABLE service_records ADD COLUMN attachmentUri TEXT;');
+  } catch (e) {
+    // Column already exists, ignore
+  }
+  
   return dbInstance;
 };
 

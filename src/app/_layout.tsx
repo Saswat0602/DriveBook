@@ -32,6 +32,9 @@ export default function RootLayout() {
       <Stack.Screen name="vehicles/index" />
       <Stack.Screen name="vehicles/add" options={{ presentation: 'modal' }} />
       <Stack.Screen name="vehicles/edit" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="fuel/index" />
+      <Stack.Screen name="fuel/add" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="fuel/edit" options={{ presentation: 'modal' }} />
     </Stack>
   );
 }

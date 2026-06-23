@@ -18,6 +18,7 @@ export interface FuelLog {
   fuelAmountLitres: number;
   totalCost: number;
   fuelType: string;
+  attachmentUri?: string;
   notes?: string;
 }
 
@@ -28,6 +29,7 @@ export interface ServiceRecord {
   odometer: number;
   serviceType: string;
   cost: number;
+  attachmentUri?: string;
   notes?: string;
 }
 

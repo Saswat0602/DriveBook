@@ -5,8 +5,8 @@ export class ServiceRepository {
   static async createServiceRecord(record: ServiceRecord): Promise<void> {
     const db = getDatabase();
     await db.runAsync(
-      `INSERT INTO service_records (id, vehicleId, date, odometer, serviceType, cost, notes) 
-       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO service_records (id, vehicleId, date, odometer, serviceType, cost, attachmentUri, notes) 
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         record.id,
         record.vehicleId,
@@ -14,9 +14,33 @@ export class ServiceRepository {
         record.odometer,
         record.serviceType,
         record.cost,
+        record.attachmentUri || null,
         record.notes || null,
       ]
     );
+  }
+
+  static async updateServiceRecord(record: ServiceRecord): Promise<void> {
+    const db = getDatabase();
+    await db.runAsync(
+      `UPDATE service_records 
+       SET date = ?, odometer = ?, serviceType = ?, cost = ?, attachmentUri = ?, notes = ?
+       WHERE id = ?`,
+      [
+        record.date,
+        record.odometer,
+        record.serviceType,
+        record.cost,
+        record.attachmentUri || null,
+        record.notes || null,
+        record.id,
+      ]
+    );
+  }
+
+  static async deleteServiceRecord(id: string): Promise<void> {
+    const db = getDatabase();
+    await db.runAsync('DELETE FROM service_records WHERE id = ?', [id]);
   }
 
   static async getServiceRecordsByVehicle(vehicleId: string): Promise<ServiceRecord[]> {

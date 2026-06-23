@@ -344,7 +344,7 @@ Track fuel expenses.
 
 ---
 
-### Task 5.1
+### [x] Task 5.1
 
 Create FuelLog model.
 
@@ -354,7 +354,7 @@ Types defined.
 
 ---
 
-### Task 5.2
+### [x] Task 5.2
 
 Create Add Fuel Log Screen.
 
@@ -372,7 +372,7 @@ Fuel entry saved.
 
 ---
 
-### Task 5.3
+### [x] Task 5.3
 
 Create Fuel History Screen.
 
@@ -382,7 +382,7 @@ Entries displayed correctly.
 
 ---
 
-### Task 5.4
+### [x] Task 5.4
 
 Create Edit Fuel Log Screen.
 
@@ -392,7 +392,7 @@ Update works.
 
 ---
 
-### Task 5.5
+### [x] Task 5.5
 
 Create Delete Fuel Log flow.
 
@@ -402,7 +402,7 @@ Delete confirmed.
 
 ---
 
-### Task 5.6
+### [x] Task 5.6
 
 Mileage Calculator Service.
 
