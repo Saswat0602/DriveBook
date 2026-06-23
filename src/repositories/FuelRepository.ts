@@ -27,4 +27,13 @@ export class FuelRepository {
       [vehicleId]
     );
   }
+
+  static async getTotalFuelCostByVehicle(vehicleId: string): Promise<number> {
+    const db = getDatabase();
+    const result = await db.getFirstAsync<{ total: number }>(
+      'SELECT SUM(totalCost) as total FROM fuel_logs WHERE vehicleId = ?',
+      [vehicleId]
+    );
+    return result?.total || 0;
+  }
 }

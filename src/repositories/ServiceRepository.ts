@@ -26,4 +26,13 @@ export class ServiceRepository {
       [vehicleId]
     );
   }
+
+  static async getTotalMaintenanceCostByVehicle(vehicleId: string): Promise<number> {
+    const db = getDatabase();
+    const result = await db.getFirstAsync<{ total: number }>(
+      'SELECT SUM(cost) as total FROM service_records WHERE vehicleId = ?',
+      [vehicleId]
+    );
+    return result?.total || 0;
+  }
 }

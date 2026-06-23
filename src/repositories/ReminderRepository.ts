@@ -25,4 +25,13 @@ export class ReminderRepository {
       [vehicleId]
     );
   }
+
+  static async getUpcomingReminders(vehicleId: string, limit: number = 3): Promise<Reminder[]> {
+    const db = getDatabase();
+    const today = new Date().toISOString().split('T')[0];
+    return await db.getAllAsync<Reminder>(
+      'SELECT * FROM reminders WHERE vehicleId = ? AND dueDate >= ? ORDER BY dueDate ASC LIMIT ?',
+      [vehicleId, today, limit]
+    );
+  }
 }

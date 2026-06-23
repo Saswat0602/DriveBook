@@ -303,7 +303,7 @@ Create home screen.
 
 ---
 
-### Task 4.1
+### [x] Task 4.1
 
 Create dashboard layout.
 
@@ -320,7 +320,7 @@ Dashboard populated correctly.
 
 ---
 
-### Task 4.2
+### [x] Task 4.2
 
 Create Quick Action buttons.
 
