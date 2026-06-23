@@ -132,6 +132,12 @@ export default function DashboardScreen() {
             onPress={() => router.push('/reports')} 
             style={styles.actionBtn} 
           />
+          <Button 
+            title="Settings" 
+            variant="outline"
+            onPress={() => router.push('/settings')} 
+            style={styles.actionBtn} 
+          />
         </View>
       </ScrollView>
     </Screen>

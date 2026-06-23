@@ -42,6 +42,7 @@ export default function RootLayout() {
       <Stack.Screen name="reminders/add" options={{ presentation: 'modal' }} />
       <Stack.Screen name="reminders/edit" options={{ presentation: 'modal' }} />
       <Stack.Screen name="reports/index" />
+      <Stack.Screen name="settings/index" />
     </Stack>
   );
 }

@@ -615,7 +615,7 @@ Prevent data loss.
 
 ---
 
-### Task 9.1
+### [x] Task 9.1
 
 Export backup.
 
@@ -636,7 +636,7 @@ JSON exported successfully.
 
 ---
 
-### Task 9.2
+### [x] Task 9.2
 
 Import backup.
 
@@ -646,7 +646,7 @@ Data restored successfully.
 
 ---
 
-### Task 9.3
+### [x] Task 9.3
 
 Backup validation.
 
@@ -664,7 +664,7 @@ Create settings screen.
 
 ---
 
-### Task 10.1
+### [x] Task 10.1
 
 Theme settings.
 
@@ -674,7 +674,7 @@ Dark mode toggle works.
 
 ---
 
-### Task 10.2
+### [x] Task 10.2
 
 Backup settings.
 
@@ -684,7 +684,7 @@ Export/import accessible.
 
 ---
 
-### Task 10.3
+### [x] Task 10.3
 
 Reset App Data.
 
