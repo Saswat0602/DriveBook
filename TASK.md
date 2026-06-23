@@ -132,7 +132,7 @@ Create application design system.
 
 ---
 
-### Task 1.1
+### [x] Task 1.1
 
 Create color palette.
 
@@ -147,7 +147,7 @@ Acceptance Criteria:
 
 ---
 
-### Task 1.2
+### [x] Task 1.2
 
 Create reusable UI components.
 
