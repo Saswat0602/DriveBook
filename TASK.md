@@ -432,7 +432,7 @@ Track vehicle maintenance.
 
 ---
 
-### Task 6.1
+### [x] Task 6.1
 
 Create ServiceRecord model.
 
@@ -442,7 +442,7 @@ Types defined.
 
 ---
 
-### Task 6.2
+### [x] Task 6.2
 
 Create Add Service Screen.
 
@@ -460,7 +460,7 @@ Service saved.
 
 ---
 
-### Task 6.3
+### [x] Task 6.3
 
 Create Service History Screen.
 
@@ -470,7 +470,7 @@ Entries visible.
 
 ---
 
-### Task 6.4
+### [x] Task 6.4
 
 Create Edit Service Screen.
 
@@ -480,7 +480,7 @@ Update works.
 
 ---
 
-### Task 6.5
+### [x] Task 6.5
 
 Create Delete Service Screen.
 

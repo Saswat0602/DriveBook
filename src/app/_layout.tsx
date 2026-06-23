@@ -35,6 +35,9 @@ export default function RootLayout() {
       <Stack.Screen name="fuel/index" />
       <Stack.Screen name="fuel/add" options={{ presentation: 'modal' }} />
       <Stack.Screen name="fuel/edit" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="services/index" />
+      <Stack.Screen name="services/add" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="services/edit" options={{ presentation: 'modal' }} />
     </Stack>
   );
 }
