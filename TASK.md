@@ -702,7 +702,7 @@ Improve usability.
 
 ---
 
-### Task 11.1
+### [x] Task 11.1
 
 Fuel log filters.
 
@@ -717,7 +717,7 @@ Results filtered correctly.
 
 ---
 
-### Task 11.2
+### [x] Task 11.2
 
 Service filters.
 
@@ -740,7 +740,7 @@ Production readiness.
 
 ---
 
-### Task 12.1
+### [x] Task 12.1
 
 TypeScript validation.
 
@@ -750,7 +750,7 @@ Zero TS errors.
 
 ---
 
-### Task 12.2
+### [x] Task 12.2
 
 Lint validation.
 
@@ -760,7 +760,7 @@ Zero lint errors.
 
 ---
 
-### Task 12.3
+### [x] Task 12.3
 
 Performance review.
 
@@ -771,7 +771,7 @@ Acceptance Criteria:
 
 ---
 
-### Task 12.4
+### [x] Task 12.4
 
 Dark mode audit.
 
@@ -781,7 +781,7 @@ Every screen supported.
 
 ---
 
-### Task 12.5
+### [x] Task 12.5
 
 Offline audit.
 
