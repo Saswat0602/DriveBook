@@ -801,13 +801,13 @@ Publish application.
 
 ---
 
-### Task 13.1
+### [x] Task 13.1
 
 Create app icon.
 
 ---
 
-### Task 13.2
+### [x] Task 13.2
 
 Create splash screen.
 
