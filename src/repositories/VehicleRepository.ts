@@ -7,7 +7,7 @@ export class VehicleRepository {
     await db.runAsync(
       `INSERT INTO vehicles (id, name, registrationNumber, vehicleType, brand, model, purchaseDate, currentOdometer, notes) 
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [
+      ...[
         vehicle.id,
         vehicle.name,
         vehicle.registrationNumber,
@@ -33,7 +33,7 @@ export class VehicleRepository {
       `UPDATE vehicles 
        SET name = ?, registrationNumber = ?, vehicleType = ?, brand = ?, model = ?, purchaseDate = ?, currentOdometer = ?, notes = ?
        WHERE id = ?`,
-      [
+      ...[
         vehicle.name,
         vehicle.registrationNumber,
         vehicle.vehicleType,
@@ -49,6 +49,6 @@ export class VehicleRepository {
 
   static async deleteVehicle(id: string): Promise<void> {
     const db = getDatabase();
-    await db.runAsync('DELETE FROM vehicles WHERE id = ?', [id]);
+    await db.runAsync('DELETE FROM vehicles WHERE id = ?', id);
   }
 }

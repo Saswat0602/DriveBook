@@ -7,7 +7,7 @@ export class FuelRepository {
     await db.runAsync(
       `INSERT INTO fuel_logs (id, vehicleId, date, odometer, fuelAmountLitres, totalCost, fuelType, attachmentUri, notes) 
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [
+      ...[
         log.id,
         log.vehicleId,
         log.date,
@@ -27,7 +27,7 @@ export class FuelRepository {
       `UPDATE fuel_logs 
        SET date = ?, odometer = ?, fuelAmountLitres = ?, totalCost = ?, fuelType = ?, attachmentUri = ?, notes = ?
        WHERE id = ?`,
-      [
+      ...[
         log.date,
         log.odometer,
         log.fuelAmountLitres,
@@ -42,14 +42,14 @@ export class FuelRepository {
 
   static async deleteFuelLog(id: string): Promise<void> {
     const db = getDatabase();
-    await db.runAsync('DELETE FROM fuel_logs WHERE id = ?', [id]);
+    await db.runAsync('DELETE FROM fuel_logs WHERE id = ?', id);
   }
 
   static async getFuelLogsByVehicle(vehicleId: string): Promise<FuelLog[]> {
     const db = getDatabase();
     return await db.getAllAsync<FuelLog>(
       'SELECT * FROM fuel_logs WHERE vehicleId = ? ORDER BY date DESC',
-      [vehicleId]
+      vehicleId
     );
   }
 
@@ -57,7 +57,7 @@ export class FuelRepository {
     const db = getDatabase();
     const result = await db.getFirstAsync<{ total: number }>(
       'SELECT SUM(totalCost) as total FROM fuel_logs WHERE vehicleId = ?',
-      [vehicleId]
+      vehicleId
     );
     return result?.total || 0;
   }

@@ -7,7 +7,7 @@ export class ServiceRepository {
     await db.runAsync(
       `INSERT INTO service_records (id, vehicleId, date, odometer, serviceType, cost, attachmentUri, notes) 
        VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
-      [
+      ...[
         record.id,
         record.vehicleId,
         record.date,
@@ -26,7 +26,7 @@ export class ServiceRepository {
       `UPDATE service_records 
        SET date = ?, odometer = ?, serviceType = ?, cost = ?, attachmentUri = ?, notes = ?
        WHERE id = ?`,
-      [
+      ...[
         record.date,
         record.odometer,
         record.serviceType,
@@ -40,14 +40,14 @@ export class ServiceRepository {
 
   static async deleteServiceRecord(id: string): Promise<void> {
     const db = getDatabase();
-    await db.runAsync('DELETE FROM service_records WHERE id = ?', [id]);
+    await db.runAsync('DELETE FROM service_records WHERE id = ?', id);
   }
 
   static async getServiceRecordsByVehicle(vehicleId: string): Promise<ServiceRecord[]> {
     const db = getDatabase();
     return await db.getAllAsync<ServiceRecord>(
       'SELECT * FROM service_records WHERE vehicleId = ? ORDER BY date DESC',
-      [vehicleId]
+      vehicleId
     );
   }
 
@@ -55,7 +55,7 @@ export class ServiceRepository {
     const db = getDatabase();
     const result = await db.getFirstAsync<{ total: number }>(
       'SELECT SUM(cost) as total FROM service_records WHERE vehicleId = ?',
-      [vehicleId]
+      vehicleId
     );
     return result?.total || 0;
   }

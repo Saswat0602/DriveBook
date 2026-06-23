@@ -7,7 +7,7 @@ export class ReminderRepository {
     await db.runAsync(
       `INSERT INTO reminders (id, vehicleId, title, dueDate, reminderType, notes) 
        VALUES (?, ?, ?, ?, ?, ?)`,
-      [
+      ...[
         reminder.id,
         reminder.vehicleId,
         reminder.title,
@@ -24,7 +24,7 @@ export class ReminderRepository {
       `UPDATE reminders 
        SET title = ?, dueDate = ?, reminderType = ?, notes = ?
        WHERE id = ?`,
-      [
+      ...[
         reminder.title,
         reminder.dueDate,
         reminder.reminderType,
@@ -36,14 +36,14 @@ export class ReminderRepository {
 
   static async deleteReminder(id: string): Promise<void> {
     const db = getDatabase();
-    await db.runAsync('DELETE FROM reminders WHERE id = ?', [id]);
+    await db.runAsync('DELETE FROM reminders WHERE id = ?', id);
   }
 
   static async getRemindersByVehicle(vehicleId: string): Promise<Reminder[]> {
     const db = getDatabase();
     return await db.getAllAsync<Reminder>(
       'SELECT * FROM reminders WHERE vehicleId = ? ORDER BY dueDate ASC',
-      [vehicleId]
+      vehicleId
     );
   }
 
@@ -52,7 +52,9 @@ export class ReminderRepository {
     const today = new Date().toISOString().split('T')[0];
     return await db.getAllAsync<Reminder>(
       'SELECT * FROM reminders WHERE vehicleId = ? AND dueDate >= ? ORDER BY dueDate ASC LIMIT ?',
-      [vehicleId, today, limit]
+      vehicleId,
+      today,
+      limit
     );
   }
 }
