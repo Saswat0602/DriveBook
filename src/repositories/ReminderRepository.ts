@@ -18,6 +18,27 @@ export class ReminderRepository {
     );
   }
 
+  static async updateReminder(reminder: Reminder): Promise<void> {
+    const db = getDatabase();
+    await db.runAsync(
+      `UPDATE reminders 
+       SET title = ?, dueDate = ?, reminderType = ?, notes = ?
+       WHERE id = ?`,
+      [
+        reminder.title,
+        reminder.dueDate,
+        reminder.reminderType,
+        reminder.notes || null,
+        reminder.id,
+      ]
+    );
+  }
+
+  static async deleteReminder(id: string): Promise<void> {
+    const db = getDatabase();
+    await db.runAsync('DELETE FROM reminders WHERE id = ?', [id]);
+  }
+
   static async getRemindersByVehicle(vehicleId: string): Promise<Reminder[]> {
     const db = getDatabase();
     return await db.getAllAsync<Reminder>(

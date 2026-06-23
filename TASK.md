@@ -498,7 +498,7 @@ Notify users about important dates.
 
 ---
 
-### Task 7.1
+### [x] Task 7.1
 
 Configure notifications.
 
@@ -508,7 +508,7 @@ Permission flow works.
 
 ---
 
-### Task 7.2
+### [x] Task 7.2
 
 Create Reminder model.
 
@@ -518,7 +518,7 @@ Types created.
 
 ---
 
-### Task 7.3
+### [x] Task 7.3
 
 Create Add Reminder Screen.
 
@@ -535,7 +535,7 @@ Reminder saved.
 
 ---
 
-### Task 7.4
+### [x] Task 7.4
 
 Schedule notifications.
 
@@ -562,7 +562,7 @@ Create analytics.
 
 ---
 
-### Task 8.1
+### [x] Task 8.1
 
 Fuel analytics.
 
@@ -577,7 +577,7 @@ Data accurate.
 
 ---
 
-### Task 8.2
+### [x] Task 8.2
 
 Service analytics.
 
@@ -592,7 +592,7 @@ Data accurate.
 
 ---
 
-### Task 8.3
+### [x] Task 8.3
 
 Charts.
 

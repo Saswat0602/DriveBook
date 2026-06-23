@@ -38,6 +38,10 @@ export default function RootLayout() {
       <Stack.Screen name="services/index" />
       <Stack.Screen name="services/add" options={{ presentation: 'modal' }} />
       <Stack.Screen name="services/edit" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="reminders/index" />
+      <Stack.Screen name="reminders/add" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="reminders/edit" options={{ presentation: 'modal' }} />
+      <Stack.Screen name="reports/index" />
     </Stack>
   );
 }
